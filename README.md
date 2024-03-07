@@ -1,6 +1,6 @@
 # tlaltizapan_turistico
 
-A new Flutter project.
+Development in progress...
 
 ## Getting Started
 
