@@ -4,7 +4,8 @@ class MyButton extends StatelessWidget {
   final String text;
   final Function()? onTap;
 
-  const MyButton({Key? key, required this.text, required this.onTap}) : super(key: key);
+  const MyButton({Key? key, required this.text, required this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class MyButton extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         margin: const EdgeInsets.symmetric(horizontal: 25.0),
         decoration: BoxDecoration(
-          color: Color.fromARGB(255, 4,35,62),
+          color: Color.fromARGB(255, 4, 35, 62),
           borderRadius: BorderRadius.circular(8),
         ),
         child: Center(

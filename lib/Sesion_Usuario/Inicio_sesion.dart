@@ -1,10 +1,14 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:tlaltizapan_turistico/Componentes/variables.dart';
-
 import '../Componentes/mi_boton.dart';
 import '../Componentes/mi_textfield.dart';
+import 'package:get/get.dart';
+import '../Componentes/variables.dart';
+import '../Responsivo/layout_responsivo.dart';
+import '../Responsivo/movil_body.dart';
+import '../Responsivo/tablet_body.dart';
+import 'restablecer_contrasena.dart';
 
 class InicioSesion extends StatefulWidget {
   InicioSesion({super.key});
@@ -22,11 +26,10 @@ class _InicioSesionState extends State<InicioSesion> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: null,
-      //el color de fondo podrá ser cambiado a var si se añade un modo oscuro y claro o se desea usar el mismo color de fondo en varias pantallas
-      backgroundColor: Color.fromARGB(255, 239, 243, 248),
-      
+      //el color de fondo podrá ser cambiado a var si se añade un modo oscuro y claro.
+      backgroundColor: ColorFondo,
+
       body: SafeArea(
-        
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -38,7 +41,10 @@ class _InicioSesionState extends State<InicioSesion> {
                   alignment: Alignment.topLeft,
                   child: IconButton(
                     onPressed: () {
-                      // Get.to(HomePage());
+                      Get.to(ResponsiveLayout(
+                        MobileBody: MovilBody(),
+                        TabletBody: TabletBody(),
+                      ));
                     },
                     icon: const Icon(
                       Icons.arrow_back,
@@ -51,7 +57,10 @@ class _InicioSesionState extends State<InicioSesion> {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Container(
-                  color: Color.fromARGB(255, 245, 245, 245),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 245, 245, 245),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
                   alignment: Alignment.center,
                   child: Column(
                     children: [
@@ -75,8 +84,8 @@ class _InicioSesionState extends State<InicioSesion> {
                         ),
                       ),
 
-                      const SizedBox(height: 36),
-//36,16,8 y 4 son los espacios entre los elementos (sizedbox)
+                      SB36,
+
                       //Formulario de inicio de sesión
                       Column(
                         children: [
@@ -87,7 +96,7 @@ class _InicioSesionState extends State<InicioSesion> {
                               style: H2,
                             ),
                           ),
-                          const SizedBox(height: 16),
+                          SB16,
                           Padding(
                             padding: EdgeInsets.only(right: 110),
                             child: Text(
@@ -95,31 +104,31 @@ class _InicioSesionState extends State<InicioSesion> {
                               style: H4,
                             ),
                           ),
-                          const SizedBox(height: 36),
+                          SB36,
 
                           //Campos de texto
                           Padding(
                             padding: EdgeInsets.only(right: 390),
                             child: Text("Email:", style: H4),
                           ),
-                          const SizedBox(height: 8),
+                          SB8,
                           MyTextField(
                             controller: emailController,
                             hintText: 'Ingresa tu Email...',
                             obscureText: false,
                           ),
-                          const SizedBox(height: 16),
+                          SB16,
                           Padding(
                             padding: EdgeInsets.only(right: 350),
                             child: Text("Contraseña:", style: H4),
                           ),
-                          const SizedBox(height: 8),
+                          SB8,
                           MyTextField(
                             controller: passwordController,
                             hintText: 'Ingresa tu Contraseña...',
                             obscureText: true,
                           ),
-                          const SizedBox(height: 36),
+                          SB36,
 
                           //Botón de inicio de sesión
                           MyButton(
@@ -128,33 +137,30 @@ class _InicioSesionState extends State<InicioSesion> {
                               //signUserIn();
                             },
                           ),
-                          const SizedBox(height: 36),
+                          SB36,
 
                           //Texto de restablecer contraseña
                           Row(
-                            mainAxisAlignment:
-                                MainAxisAlignment.center, 
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text("¿Olvidaste tu contraseña? ", style: H4),
                               GestureDetector(
                                 onTap: () {
-                                  // Get.to(ResetPassword());
+                                  Get.to(RestContrasena());
                                 },
                                 child: Container(
                                   decoration: BoxDecoration(
                                     border: Border(
                                       bottom: BorderSide(
-                                        color: Color.fromARGB(255, 4,35,62), 
-                                        width:
-                                            1.0, 
+                                        color: Color.fromARGB(255, 4, 35, 62),
+                                        width: 1.0,
                                       ),
                                     ),
                                   ),
                                   child: Text(
                                     "Restablecer Contraseña",
                                     style: TextStyle(
-                                      color:
-                                          Color.fromARGB(255, 4,35,62),
+                                      color: Color.fromARGB(255, 4, 35, 62),
                                     ),
                                   ),
                                 ),
@@ -166,7 +172,6 @@ class _InicioSesionState extends State<InicioSesion> {
                     ],
                   ),
                 ),
-                
               ),
             ],
           ),

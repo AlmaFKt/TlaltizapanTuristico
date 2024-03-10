@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:tlaltizapan_turistico/Sesion_Usuario/Inicio_sesion.dart';
+import 'package:get/get.dart';
+import 'Responsivo/layout_responsivo.dart';
+import 'Responsivo/movil_body.dart';
+import 'Responsivo/tablet_body.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,14 +11,16 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Tlaltizapán turístico',
       debugShowCheckedModeBanner: false,
-      home: InicioSesion(),
+      //Se llaman los widgets responsivos
+      home: ResponsiveLayout(
+        MobileBody: MovilBody(),
+        TabletBody: TabletBody(),
+      ),
     );
   }
 }
-
