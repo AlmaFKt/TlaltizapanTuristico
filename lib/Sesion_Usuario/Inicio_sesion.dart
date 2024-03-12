@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:tlaltizapan_turistico/Sesion_Usuario/registro_usuario.dart';
 import '../Componentes/mi_boton.dart';
 import '../Componentes/mi_textfield.dart';
 import 'package:get/get.dart';
@@ -159,6 +160,33 @@ class _InicioSesionState extends State<InicioSesion> {
                                   ),
                                   child: Text(
                                     "Restablecer Contraseña",
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 4, 35, 62),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text("¿Aun no tienes una cuenta? ", style: H4),
+                              GestureDetector(
+                                onTap: () {
+                                  Get.to(RegistroUsuario());
+                                },
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    border: Border(
+                                      bottom: BorderSide(
+                                        color: Color.fromARGB(255, 4, 35, 62),
+                                        width: 1.0,
+                                      ),
+                                    ),
+                                  ),
+                                  child: Text(
+                                    "Registrato",
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 4, 35, 62),
                                     ),
