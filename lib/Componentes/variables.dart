@@ -60,7 +60,7 @@ PreferredSize appBar = PreferredSize(
             onTap: () {
               Get.to(InicioSesion());
             },
-            child: Icon(Icons.menu, size: 30),
+            child: Icon(Icons.menu, size: 30, color: Color.fromARGB(255, 122,122,122),),
           ),
         ),
       ],

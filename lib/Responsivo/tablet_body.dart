@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../Componentes/variables.dart';
+import 'cuerpo_base.dart';
 
 class TabletBody extends StatefulWidget {
   const TabletBody({super.key});
@@ -9,16 +9,22 @@ class TabletBody extends StatefulWidget {
 }
 
 class _TabletBodyState extends State<TabletBody> {
+  int _selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: appBar,
-      backgroundColor: ColorFondo,
-      body: Column(
+    return CuerpoBase(
+      child: Column(
         children: [
-          Text('Tablet Body'),
+          // Add specific content for tablet layout
         ],
       ),
+      selectedIndex: _selectedIndex,
+      onItemTapped: (index) {
+        setState(() {
+          _selectedIndex = index;
+        });
+      },
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../Componentes/variables.dart';
+import 'cuerpo_base.dart';
 
 class MovilBody extends StatefulWidget {
   const MovilBody({super.key});
@@ -9,16 +9,21 @@ class MovilBody extends StatefulWidget {
 }
 //main
 class _MovilBodyState extends State<MovilBody> {
+  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: appBar,
-      backgroundColor: ColorFondo,
-      body: Column(
+    return CuerpoBase(
+      child: Column(
         children: [
-          Text('Mobile Body'),
+          // Add specific content for mobile layout
         ],
       ),
+      selectedIndex: _selectedIndex,
+      onItemTapped: (index) {
+        setState(() {
+          _selectedIndex = index;
+        });
+      },
     );
   }
 }
