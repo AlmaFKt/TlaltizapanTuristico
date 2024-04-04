@@ -62,7 +62,7 @@ class _InicioSesionState extends State<InicioSesion> {
                         ),
                       ),
                     ),
-                
+
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Container(
@@ -75,7 +75,9 @@ class _InicioSesionState extends State<InicioSesion> {
                           children: [
                             //Titulo y logo
                             Padding(
-                              padding: EdgeInsets.only(left: 0, ),
+                              padding: EdgeInsets.only(
+                                left: 0,
+                              ),
                               child: Row(
                                 children: [
                                   Transform.rotate(
@@ -92,9 +94,9 @@ class _InicioSesionState extends State<InicioSesion> {
                                 ],
                               ),
                             ),
-                
+
                             SB36,
-                
+
                             //Formulario de inicio de sesión
                             Column(
                               children: [
@@ -114,7 +116,7 @@ class _InicioSesionState extends State<InicioSesion> {
                                   ),
                                 ),
                                 SB36,
-                
+
                                 //Campos de texto
                                 Padding(
                                   padding: EdgeInsets.only(right: 275),
@@ -138,7 +140,7 @@ class _InicioSesionState extends State<InicioSesion> {
                                   obscureText: true,
                                 ),
                                 SB36,
-                
+
                                 //Botón de inicio de sesión
                                 MyButton(
                                   text: 'INICIAR SESIÓN',
@@ -147,12 +149,13 @@ class _InicioSesionState extends State<InicioSesion> {
                                   },
                                 ),
                                 SB36,
-                
+
                                 //Texto de restablecer contraseña
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text("¿Olvidaste tu contraseña? ", style: H4),
+                                    Text("¿Olvidaste tu contraseña? ",
+                                        style: H4),
                                     GestureDetector(
                                       onTap: () {
                                         Get.to(RestContrasena());
@@ -161,7 +164,8 @@ class _InicioSesionState extends State<InicioSesion> {
                                         decoration: BoxDecoration(
                                           border: Border(
                                             bottom: BorderSide(
-                                              color: Color.fromARGB(255, 4, 35, 62),
+                                              color: Color.fromARGB(
+                                                  255, 4, 35, 62),
                                               width: 1.0,
                                             ),
                                           ),
@@ -169,7 +173,8 @@ class _InicioSesionState extends State<InicioSesion> {
                                         child: Text(
                                           "Restablecer Contraseña",
                                           style: TextStyle(
-                                            color: Color.fromARGB(255, 4, 35, 62),
+                                            color:
+                                                Color.fromARGB(255, 4, 35, 62),
                                           ),
                                         ),
                                       ),
@@ -180,7 +185,8 @@ class _InicioSesionState extends State<InicioSesion> {
                                 Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Text("¿Aún no tienes una cuenta? ", style: H4),
+                                    Text("¿Aún no tienes una cuenta? ",
+                                        style: H4),
                                     GestureDetector(
                                       onTap: () {
                                         Get.to(RegistroUsuario());
@@ -189,7 +195,8 @@ class _InicioSesionState extends State<InicioSesion> {
                                         decoration: BoxDecoration(
                                           border: Border(
                                             bottom: BorderSide(
-                                              color: Color.fromARGB(255, 4, 35, 62),
+                                              color: Color.fromARGB(
+                                                  255, 4, 35, 62),
                                               width: 1.0,
                                             ),
                                           ),
@@ -197,7 +204,8 @@ class _InicioSesionState extends State<InicioSesion> {
                                         child: Text(
                                           "Registrarse",
                                           style: TextStyle(
-                                            color: Color.fromARGB(255, 4, 35, 62),
+                                            color:
+                                                Color.fromARGB(255, 4, 35, 62),
                                           ),
                                         ),
                                       ),
