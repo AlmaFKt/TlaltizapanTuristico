@@ -22,6 +22,14 @@ TextStyle H2 = GoogleFonts.roboto(
   ),
 );
 
+TextStyle H3 = GoogleFonts.roboto(
+  textStyle: const TextStyle(
+    color: Color.fromARGB(255, 95, 95, 95),
+    fontSize: 18.5,
+    fontWeight: FontWeight.w300,
+  ),
+);
+
 TextStyle H4 = GoogleFonts.roboto(
   textStyle: const TextStyle(
     color: Color.fromARGB(255, 145, 145, 145),
@@ -29,9 +37,20 @@ TextStyle H4 = GoogleFonts.roboto(
     fontWeight: FontWeight.normal,
   ),
 );
-
+//Texto extra
+TextStyle H5 = GoogleFonts.roboto(
+  textStyle: const TextStyle(
+    color: Color.fromARGB(255, 4, 35, 62),
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+  ),
+);
 //Color de fondo (sin tema oscuro y claro por el momento)
 Color ColorFondo = Color.fromARGB(255, 239, 243, 248);
+
+//Color tono azul oscuro y gris
+Color azulOscuro = Color.fromARGB(255, 4, 35, 62);
+Color gris = Color.fromARGB(255, 122, 122, 122);
 
 //Espacios con tamaños predefinidos considerando el diseño figma
 final SB8 = const SizedBox(height: 8);
@@ -50,8 +69,8 @@ PreferredSize appBar = PreferredSize(
           padding: const EdgeInsets.all(8.0),
           child: Image.asset(
             'imagenes/pueblos-magicos-png.png',
-            height: 140,
-            width: 120,
+            height: 85,
+            width: 85,
           ),
         ),
         Padding(
@@ -60,7 +79,11 @@ PreferredSize appBar = PreferredSize(
             onTap: () {
               Get.to(InicioSesion());
             },
-            child: Icon(Icons.menu, size: 30, color: Color.fromARGB(255, 122,122,122),),
+            child: Icon(
+              Icons.menu,
+              size: 30,
+              color: gris,
+            ),
           ),
         ),
       ],

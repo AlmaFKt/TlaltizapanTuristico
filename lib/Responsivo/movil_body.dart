@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../Componentes/carta_customizable.dart';
+import '../Componentes/variables.dart';
 import 'cuerpo_base.dart';
 
 class MovilBody extends StatefulWidget {
@@ -15,7 +17,7 @@ class _MovilBodyState extends State<MovilBody> {
     return CuerpoBase(
       child: Column(
         children: [
-          // Add specific content for mobile layout
+          
         ],
       ),
       selectedIndex: _selectedIndex,

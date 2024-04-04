@@ -19,8 +19,9 @@ class _RestContrasenaState extends State<RestContrasena> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorFondo,
-      body: SafeArea(
-        child: Center(
+      body: SafeArea(       
+          child: SingleChildScrollView(
+            scrollDirection: Axis.vertical,
           child: SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Column(
@@ -102,7 +103,7 @@ class _RestContrasenaState extends State<RestContrasena> {
             ),
           ),
         ),
-      ),
+      ),    
     );
   }
 }
