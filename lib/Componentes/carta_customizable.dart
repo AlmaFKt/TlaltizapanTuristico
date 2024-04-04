@@ -36,19 +36,19 @@ class CartaCustomizable extends StatelessWidget {
           Stack(
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(15),
+                borderRadius: BorderRadius.circular(10),
                 child: Image.network(
                   imagePath,
-                  height: 130,
+                  height: 140,
                   width: double.infinity,
                   fit: BoxFit.fill,
                 ),
               ),
               Container(
-                height: 130,
+                height: 140,
                 width: 380,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(10),
                   gradient: LinearGradient(
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
@@ -57,7 +57,7 @@ class CartaCustomizable extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 43,
+                top: 48,
                 left: 10,
                 child: Text(
                   title,
@@ -92,7 +92,7 @@ class CartaCustomizable extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 backgroundColor: azulOscuro,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(14)),
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
               ),
             ),
