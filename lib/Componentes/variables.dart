@@ -45,6 +45,13 @@ TextStyle H5 = GoogleFonts.roboto(
     fontWeight: FontWeight.bold,
   ),
 );
+TextStyle H6 = GoogleFonts.roboto(
+  textStyle: const TextStyle(
+    color: Color.fromARGB(255, 0, 0, 0),
+    fontSize: 24,
+    fontWeight: FontWeight.bold,
+  ),
+);
 //Color de fondo (sin tema oscuro y claro por el momento)
 Color ColorFondo = Color.fromARGB(255, 239, 243, 248);
 

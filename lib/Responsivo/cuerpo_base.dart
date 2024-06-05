@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:tlaltizapan_turistico/Componentes/carta_customizable.dart';
+import 'package:tlaltizapan_turistico/Plantillas_widgets/widget_opiniones_imagen.dart';
+import 'package:tlaltizapan_turistico/Plantillas_widgets/widget_principal_descubre.dart';
 import '../Componentes/variables.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class CuerpoBase extends StatefulWidget {
   final Widget child;
@@ -41,15 +41,18 @@ class _CuerpoBaseState extends State<CuerpoBase> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SB8,
-          CartaCustomizable(
+          WidgetOpiniones(
             imagePath:
-                'https://www.guiaturisticamexico.com/img/morelos-tlaltizapan.jpg',
-            title: 'Eventos',
-            description: 'Vive experiencias inolvidables',
+                'https://images.trvl-media.com/lodging/1000000/40000/34500/34477/896aa082.jpg',
+            title: 'La selección del día',
+            description: 'Basado en las opiniones de los usuarios',
+            nombre: 'Hotel Santa Isabel',
+            ubicacion: 'Tlaltizapán Centro',
+            opiniones: '4.4(32 opiniones)',
             onTap: () {},
           ),
           SB16,
-          CartaCustomizable(
+          WidgetDescubre(
             imagePath:
                 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/e9/4e/c4/las-estacas-parque-natural.jpg',
             title: 'Tours',
@@ -59,7 +62,7 @@ class _CuerpoBaseState extends State<CuerpoBase> {
           ),
         ],
       ),
-      //arreglo de bottomNvaigation
+      //arreglo[] de bottomNvaigation
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(

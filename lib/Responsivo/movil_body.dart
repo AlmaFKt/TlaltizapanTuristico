@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../Componentes/carta_customizable.dart';
+import '../Plantillas_widgets/widget_principal_descubre.dart';
 import '../Componentes/variables.dart';
 import 'cuerpo_base.dart';
 
