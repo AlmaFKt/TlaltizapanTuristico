@@ -63,158 +63,162 @@ class _InicioSesionState extends State<InicioSesion> {
                         ),
                       ),
 
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 245, 245, 245),
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          alignment: Alignment.center,
-                          child: Column(
-                            children: [
-                              //Titulo y logo
-                              Padding(
-                                padding: EdgeInsets.only(
-                                  left: 0,
+                      SingleChildScrollView(
+                        child: Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Color.fromARGB(255, 245, 245, 245),
+                              borderRadius: BorderRadius.circular(15),
+                            ),
+                            alignment: Alignment.center,
+                            child: Column(
+                              children: [
+                                //Titulo y logo
+                                Padding(
+                                  padding: EdgeInsets.only(
+                                    left: 0,
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      Transform.rotate(
+                                        angle: 90 * pi / 180,
+                                        child: SvgPicture.asset(
+                                          'imagenes/2070573.svg',
+                                          height: 50,
+                                        ),
+                                      ),
+                                      Text(
+                                        'Tlaltizapán Turístico',
+                                        style: H1,
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                                child: Row(
+
+                                SB36,
+
+                                //Formulario de inicio de sesión
+                                Column(
                                   children: [
-                                    Transform.rotate(
-                                      angle: 90 * pi / 180,
-                                      child: SvgPicture.asset(
-                                        'imagenes/2070573.svg',
-                                        height: 50,
+                                    Padding(
+                                      padding: EdgeInsets.only(right: 220),
+                                      child: Text(
+                                        "Bienvenido",
+                                        style: H2,
                                       ),
                                     ),
-                                    Text(
-                                      'Tlaltizapán Turístico',
-                                      style: H1,
+                                    SB16,
+                                    Padding(
+                                      padding: EdgeInsets.only(right: 10),
+                                      child: Text(
+                                        "Ingresa tus credenciales para acceder a tu cuenta",
+                                        style: H4,
+                                      ),
+                                    ),
+                                    SB36,
+
+                                    //Campos de texto
+                                    Padding(
+                                      padding: EdgeInsets.only(right: 275),
+                                      child: Text("Email:", style: H4),
+                                    ),
+                                    SB8,
+                                    MyTextField(
+                                      controller: emailController,
+                                      hintText: 'Ingresa tu Email...',
+                                      obscureText: false,
+                                    ),
+                                    SB16,
+                                    Padding(
+                                      padding: EdgeInsets.only(right: 240),
+                                      child: Text("Contraseña:", style: H4),
+                                    ),
+                                    SB8,
+                                    MyTextField(
+                                      controller: passwordController,
+                                      hintText: 'Ingresa tu Contraseña...',
+                                      obscureText: true,
+                                    ),
+                                    SB36,
+
+                                    //Botón de inicio de sesión
+                                    MyButton(
+                                      text: 'INICIAR SESIÓN',
+                                      onTap: () {
+                                        //signUserIn();
+                                      },
+                                    ),
+                                    SB36,
+
+                                    //Texto de restablecer contraseña
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text("¿Olvidaste tu contraseña? ",
+                                            style: H4),
+                                        GestureDetector(
+                                          onTap: () {
+                                            Get.to(RestContrasena());
+                                          },
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              border: Border(
+                                                bottom: BorderSide(
+                                                  color: Color.fromARGB(
+                                                      255, 4, 35, 62),
+                                                  width: 1.0,
+                                                ),
+                                              ),
+                                            ),
+                                            child: Text(
+                                              "Restablecer Contraseña",
+                                              style: TextStyle(
+                                                color: Color.fromARGB(
+                                                    255, 4, 35, 62),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    SB8,
+                                    Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Text("¿Aún no tienes una cuenta? ",
+                                            style: H4),
+                                        GestureDetector(
+                                          onTap: () {
+                                            Get.to(RegistroUsuario());
+                                          },
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              border: Border(
+                                                bottom: BorderSide(
+                                                  color: Color.fromARGB(
+                                                      255, 4, 35, 62),
+                                                  width: 1.0,
+                                                ),
+                                              ),
+                                            ),
+                                            child: Text(
+                                              "Registrarse",
+                                              style: TextStyle(
+                                                color: Color.fromARGB(
+                                                    255, 4, 35, 62),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ],
-                                ),
-                              ),
-
-                              SB36,
-
-                              //Formulario de inicio de sesión
-                              Column(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(right: 220),
-                                    child: Text(
-                                      "Bienvenido",
-                                      style: H2,
-                                    ),
-                                  ),
-                                  SB16,
-                                  Padding(
-                                    padding: EdgeInsets.only(right: 10),
-                                    child: Text(
-                                      "Ingresa tus credenciales para acceder a tu cuenta",
-                                      style: H4,
-                                    ),
-                                  ),
-                                  SB36,
-
-                                  //Campos de texto
-                                  Padding(
-                                    padding: EdgeInsets.only(right: 275),
-                                    child: Text("Email:", style: H4),
-                                  ),
-                                  SB8,
-                                  MyTextField(
-                                    controller: emailController,
-                                    hintText: 'Ingresa tu Email...',
-                                    obscureText: false,
-                                  ),
-                                  SB16,
-                                  Padding(
-                                    padding: EdgeInsets.only(right: 240),
-                                    child: Text("Contraseña:", style: H4),
-                                  ),
-                                  SB8,
-                                  MyTextField(
-                                    controller: passwordController,
-                                    hintText: 'Ingresa tu Contraseña...',
-                                    obscureText: true,
-                                  ),
-                                  SB36,
-
-                                  //Botón de inicio de sesión
-                                  MyButton(
-                                    text: 'INICIAR SESIÓN',
-                                    onTap: () {
-                                      //signUserIn();
-                                    },
-                                  ),
-                                  SB36,
-
-                                  //Texto de restablecer contraseña
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text("¿Olvidaste tu contraseña? ",
-                                          style: H4),
-                                      GestureDetector(
-                                        onTap: () {
-                                          Get.to(RestContrasena());
-                                        },
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            border: Border(
-                                              bottom: BorderSide(
-                                                color: Color.fromARGB(
-                                                    255, 4, 35, 62),
-                                                width: 1.0,
-                                              ),
-                                            ),
-                                          ),
-                                          child: Text(
-                                            "Restablecer Contraseña",
-                                            style: TextStyle(
-                                              color: Color.fromARGB(
-                                                  255, 4, 35, 62),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  SB8,
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      Text("¿Aún no tienes una cuenta? ",
-                                          style: H4),
-                                      GestureDetector(
-                                        onTap: () {
-                                          Get.to(RegistroUsuario());
-                                        },
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            border: Border(
-                                              bottom: BorderSide(
-                                                color: Color.fromARGB(
-                                                    255, 4, 35, 62),
-                                                width: 1.0,
-                                              ),
-                                            ),
-                                          ),
-                                          child: Text(
-                                            "Registrarse",
-                                            style: TextStyle(
-                                              color: Color.fromARGB(
-                                                  255, 4, 35, 62),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              )
-                            ],
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),

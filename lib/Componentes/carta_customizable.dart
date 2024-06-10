@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:tlaltizapan_turistico/Componentes/variables.dart';
 
-class WidgetDescubre extends StatelessWidget {
+class CartaCustomizable extends StatelessWidget {
   final String imagePath;
   final String title;
   final String description;
   final VoidCallback onTap;
 
-  WidgetDescubre({
+  CartaCustomizable({
     required this.imagePath,
     required this.title,
     required this.description,
@@ -23,7 +23,7 @@ class WidgetDescubre extends StatelessWidget {
           //Titulo
           Text(
             title,
-            style: H1,
+            style: H5,
           ),
           const SizedBox(height: 2),
           //Descripción
@@ -52,7 +52,7 @@ class WidgetDescubre extends StatelessWidget {
                   gradient: LinearGradient(
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
-                    colors: [Colors.black.withOpacity(0.9), Colors.transparent],
+                    colors: [Colors.black.withOpacity(0.7), Colors.transparent],
                   ),
                 ),
               ),
@@ -83,8 +83,9 @@ class WidgetDescubre extends StatelessWidget {
                     'Ver Todos',
                     style: TextStyle(color: Colors.white, fontSize: 16),
                   ),
+
                   const SizedBox(width: 6),
-                  //icono
+//icono
                   Icon(Icons.chevron_right, color: Colors.white),
                 ],
               ),

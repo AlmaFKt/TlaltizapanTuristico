@@ -15,8 +15,9 @@ class FechaField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+    return Container(
+      padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.symmetric(horizontal: 25.0),
       child: TextField(
         controller: datePickerController,
         obscureText: obscureText,
