@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tlaltizapan_turistico/Plantillas_widgets/plantilla_eventos.dart';
+import 'package:tlaltizapan_turistico/Plantillas_widgets/widget_cambioImgs.dart';
 import 'package:tlaltizapan_turistico/Plantillas_widgets/widget_carrucel.dart';
 import 'package:tlaltizapan_turistico/Plantillas_widgets/widget_opiniones_imagen.dart';
 import 'package:tlaltizapan_turistico/Plantillas_widgets/widget_principal_descubre.dart';
@@ -83,6 +84,16 @@ class _CuerpoBaseState extends State<CuerpoBase> {
                     'Obtén la ubicación de los lugares más emblemáticos de la zona',
                 onTap: () {},
               ),
+              WidgetImagenes(
+                  imagePaths: [
+                    'https://www.elsoldecuernavaca.com.mx/local/ftq7j0-balneario-santa-isabel-tlaltizapan-5.jpg/ALTERNATES/LANDSCAPE_768/balneario-santa-isabel-tlaltizapan%20(5).jpg', 
+                    'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/e9/4e/c4/las-estacas-parque-natural.jpg'
+                  ],
+                  title: ("Próximos eventos"),
+                  description: ("Viernes 9 - jueves 15"),
+                  nombre: ("Gerardo Ortiz"),
+                  ubicacion: ("Sábado 10 de julio"),
+                  onTap: (){})
             ],
           ),
         ),

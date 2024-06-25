@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:tlaltizapan_turistico/Componentes/incons.dart';
 import 'package:tlaltizapan_turistico/Componentes/variables.dart';
 import 'package:tlaltizapan_turistico/Plantillas_widgets/widget_carrucel.dart';
+import 'package:tlaltizapan_turistico/Responsivo/cuerpo_base.dart';
+import 'package:get/get.dart';
 
 class PlantillaEventos extends StatefulWidget {
   const PlantillaEventos({super.key});
@@ -22,14 +24,28 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
           Flexible(
             child: Row(
               children: [
-                Icon(
-                  CupertinoIcons.chevron_left,
-                  color: Colors.black,
-                ),
-                Text(
-                  'Regresar',
-                  style: H2,
-                  selectionColor: Colors.black,
+                GestureDetector(
+                  onTap: () {
+                    Get.to(
+                        () => CuerpoBase(
+                              selectedIndex: 0,
+                              onItemTapped: (int index) {},
+                              child: Container(), 
+                            ),
+                        arguments: {'index': 0});
+                  },
+                  child: Row(
+                    children: [
+                      Icon(
+                        CupertinoIcons.chevron_left,
+                        color: Colors.black,
+                      ),
+                      Text(
+                        'Regresar',
+                        style: H2,
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
