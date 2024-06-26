@@ -1,4 +1,5 @@
 //File para definir las variables de estilo que se usaran y/o reutilizaran en la aplicacion
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -52,6 +53,15 @@ TextStyle H6 = GoogleFonts.roboto(
     fontWeight: FontWeight.bold,
   ),
 );
+
+TextStyle H7 = GoogleFonts.roboto(
+  textStyle: const TextStyle(
+    color: Color.fromARGB(255, 0, 0, 0),
+    fontSize: 16,
+    fontWeight: FontWeight.w500,
+  ),
+);
+
 //Color de fondo (sin tema oscuro y claro por el momento)
 Color ColorFondo = Color.fromARGB(255, 239, 243, 248);
 
@@ -75,7 +85,7 @@ PreferredSize appBar = PreferredSize(
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Image.asset(
-            'imagenes/pueblos-magicos-png.png',
+            'imagenes/pueblos_magicos.png',
             height: 85,
             width: 85,
           ),
@@ -84,7 +94,7 @@ PreferredSize appBar = PreferredSize(
           padding: const EdgeInsets.only(right: 35),
           child: GestureDetector(
             onTap: () {
-              Get.to(InicioSesion());
+              Get.to(() => InicioSesion());
             },
             child: Icon(
               Icons.menu,
@@ -97,3 +107,51 @@ PreferredSize appBar = PreferredSize(
     ),
   ),
 );
+
+final BarraBusqueda =  Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 19.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Busca en Tlaltizapan",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: 8),
+                Row(
+                  children: [
+                    Expanded(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: "Buscar...",
+                          prefixIcon: Icon(Icons.search),
+                          contentPadding: EdgeInsets.symmetric(vertical: 8.0),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(10)),
+                            borderSide: BorderSide.none,
+                          ),
+                          filled: true,
+                          fillColor: Color.fromARGB(255, 226, 228, 236),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          IconButton(
+                            icon: Icon(CupertinoIcons.slider_horizontal_3),
+                            onPressed: () {},
+                          ),
+                          Text("Filtrar", style: TextStyle(fontSize: 13)),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          );

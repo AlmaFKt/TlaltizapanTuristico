@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:tlaltizapan_turistico/Componentes/incons.dart';
 import 'package:tlaltizapan_turistico/Componentes/variables.dart';
 import 'package:tlaltizapan_turistico/Plantillas_widgets/widget_carrucel.dart';
-import 'package:tlaltizapan_turistico/Responsivo/cuerpo_base.dart';
+import 'package:tlaltizapan_turistico/PaginasPrincipales/descubre_cuerpo.dart';
 import 'package:get/get.dart';
+import 'widget_cambioImgs.dart';
 
 class PlantillaEventos extends StatefulWidget {
   const PlantillaEventos({super.key});
@@ -30,7 +31,7 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                         () => CuerpoBase(
                               selectedIndex: 0,
                               onItemTapped: (int index) {},
-                              child: Container(), 
+                              child: Container(),
                             ),
                         arguments: {'index': 0});
                   },
@@ -39,10 +40,11 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                       Icon(
                         CupertinoIcons.chevron_left,
                         color: Colors.black,
+                        size: 35,
                       ),
                       Text(
                         'Regresar',
-                        style: H2,
+                        style: H7,
                       ),
                     ],
                   ),
@@ -63,6 +65,20 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      WidgetImagenes(
+                          imagenes: [
+                            'https://www.billboard.com/wp-content/uploads/2024/02/gerardo-ortiz-la3c-2022-billboard-espanol-1548.jpg',
+                            'https://www.gob.mx/cms/uploads/article/main_image/32528/comparsa-chinelos-tlaltizapan-morelos.jpg'
+                          ],
+                          title: ("Próximos eventos"),
+                          description: ("Viernes 9 - jueves 15"),
+                          nombres: ["Gerardo Ortiz", "Carnaval 2024"],
+                          fechas: [
+                            "Viernes 9 de febrero",
+                            "Sábado 10 de febrero"
+                          ],
+                          onTap: () {}),
+                      SB16,
                       Padding(
                         padding: const EdgeInsets.only(left: 15),
                         child: Text('Eventos recomendados', style: H2),
@@ -74,7 +90,7 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                       SizedBox(
                         height: 210,
                         child: PageView(
-                          controller: PageController(viewportFraction: 0.7),
+                          controller: PageController(viewportFraction: 0.5),
                           scrollDirection: Axis.horizontal,
                           children: [
                             Widgetmediano(
@@ -83,9 +99,6 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                               title: 'Chinelos',
                               fecha: 'Sabado 14 de Octubre',
                               onTap: () {},
-                              mensaje: 'Buscar Boletos',
-                              icono: Icon(CupertinoIcons.tickets,
-                                  color: Colors.white),
                             ),
                             Widgetmediano(
                               imagePath:
@@ -93,9 +106,6 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                               title: 'Danza Folclorica',
                               fecha: 'Sabado 14 de Octubre',
                               onTap: () {},
-                              mensaje: 'Buscar Boletos',
-                              icono: Icon(CupertinoIcons.tickets,
-                                  color: Colors.white),
                             ),
                             Widgetmediano(
                               imagePath:
@@ -103,9 +113,6 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                               title: 'Chinelos',
                               fecha: 'Sabado 14 de Octubre',
                               onTap: () {},
-                              mensaje: 'Buscar Boletos',
-                              icono: Icon(CupertinoIcons.tickets,
-                                  color: Colors.white),
                             ),
                             Widgetmediano(
                               imagePath:
@@ -113,9 +120,6 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                               title: 'Chinelos',
                               fecha: 'Sabado 14 de Octubre',
                               onTap: () {},
-                              mensaje: 'Buscar Boletos',
-                              icono: Icon(CupertinoIcons.tickets,
-                                  color: Colors.white),
                             ),
                           ],
                         ),
@@ -137,7 +141,7 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                       SizedBox(
                         height: 210,
                         child: PageView(
-                          controller: PageController(viewportFraction: 0.7),
+                          controller: PageController(viewportFraction: 0.5),
                           scrollDirection: Axis.horizontal,
                           children: [
                             Widgetmediano(
@@ -146,9 +150,6 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                               title: 'Chinelos',
                               fecha: 'Sabado 14 de Octubre',
                               onTap: () {},
-                              mensaje: 'Buscar Boletos',
-                              icono: Icon(CupertinoIcons.tickets,
-                                  color: Colors.white),
                             ),
                             Widgetmediano(
                               imagePath:
@@ -156,9 +157,6 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                               title: 'Danza Folclorica',
                               fecha: 'Sabado 14 de Octubre',
                               onTap: () {},
-                              mensaje: 'Buscar Boletos',
-                              icono: Icon(CupertinoIcons.tickets,
-                                  color: Colors.white),
                             ),
                             Widgetmediano(
                               imagePath:
@@ -166,9 +164,6 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                               title: 'Chinelos',
                               fecha: 'Sabado 14 de Octubre',
                               onTap: () {},
-                              mensaje: 'Buscar Boletos',
-                              icono: Icon(CupertinoIcons.tickets,
-                                  color: Colors.white),
                             ),
                             Widgetmediano(
                               imagePath:
@@ -176,9 +171,6 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                               title: 'Chinelos',
                               fecha: 'Sabado 14 de Octubre',
                               onTap: () {},
-                              mensaje: 'Buscar Boletos',
-                              icono: Icon(CupertinoIcons.tickets,
-                                  color: Colors.white),
                             ),
                           ],
                         ),
@@ -199,7 +191,7 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                       SizedBox(
                         height: 210,
                         child: PageView(
-                          controller: PageController(viewportFraction: 0.7),
+                          controller: PageController(viewportFraction: 0.5),
                           scrollDirection: Axis.horizontal,
                           children: [
                             Widgetmediano(
@@ -208,9 +200,6 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                               title: 'Chinelos',
                               fecha: 'Sabado 14 de Octubre',
                               onTap: () {},
-                              mensaje: 'Buscar Boletos',
-                              icono: Icon(CupertinoIcons.tickets,
-                                  color: Colors.white),
                             ),
                             Widgetmediano(
                               imagePath:
@@ -218,9 +207,6 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                               title: 'Danza Folclorica',
                               fecha: 'Sabado 14 de Octubre',
                               onTap: () {},
-                              mensaje: 'Buscar Boletos',
-                              icono: Icon(CupertinoIcons.tickets,
-                                  color: Colors.white),
                             ),
                             Widgetmediano(
                               imagePath:
@@ -228,9 +214,6 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                               title: 'Chinelos',
                               fecha: 'Sabado 14 de Octubre',
                               onTap: () {},
-                              mensaje: 'Buscar Boletos',
-                              icono: Icon(CupertinoIcons.tickets,
-                                  color: Colors.white),
                             ),
                             Widgetmediano(
                               imagePath:
@@ -238,9 +221,6 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                               title: 'Chinelos',
                               fecha: 'Sabado 14 de Octubre',
                               onTap: () {},
-                              mensaje: 'Buscar Boletos',
-                              icono: Icon(CupertinoIcons.tickets,
-                                  color: Colors.white),
                             ),
                           ],
                         ),

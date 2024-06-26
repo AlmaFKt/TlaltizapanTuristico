@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'cuerpo_base.dart';
+import '../PaginasPrincipales/descubre_cuerpo.dart';
 
 class TabletBody extends StatefulWidget {
   const TabletBody({super.key});

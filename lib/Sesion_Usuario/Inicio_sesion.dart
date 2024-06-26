@@ -50,10 +50,10 @@ class _InicioSesionState extends State<InicioSesion> {
                           alignment: Alignment.topLeft,
                           child: IconButton(
                             onPressed: () {
-                              Get.to(ResponsiveLayout(
-                                MobileBody: MovilBody(),
-                                TabletBody: TabletBody(),
-                              ));
+                              Get.to(() => ResponsiveLayout(
+                                    MobileBody: MovilBody(),
+                                    TabletBody: TabletBody(),
+                                  ));
                             },
                             icon: const Icon(
                               Icons.arrow_back,
@@ -160,7 +160,7 @@ class _InicioSesionState extends State<InicioSesion> {
                                             style: H4),
                                         GestureDetector(
                                           onTap: () {
-                                            Get.to(RestContrasena());
+                                            Get.to(() => RestContrasena());
                                           },
                                           child: Container(
                                             decoration: BoxDecoration(
@@ -192,7 +192,7 @@ class _InicioSesionState extends State<InicioSesion> {
                                             style: H4),
                                         GestureDetector(
                                           onTap: () {
-                                            Get.to(RegistroUsuario());
+                                            Get.to(() => RegistroUsuario());
                                           },
                                           child: Container(
                                             decoration: BoxDecoration(

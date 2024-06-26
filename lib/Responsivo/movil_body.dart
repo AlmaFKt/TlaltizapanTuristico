@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import '../Plantillas_widgets/widget_principal_descubre.dart';
-import '../Componentes/variables.dart';
-import 'cuerpo_base.dart';
+import '../PaginasPrincipales/descubre_cuerpo.dart';
 
 class MovilBody extends StatefulWidget {
   const MovilBody({super.key});

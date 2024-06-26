@@ -1,14 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tlaltizapan_turistico/Componentes/variables.dart';
+import '../Componentes/variables.dart';
 
 class Widgetmediano extends StatelessWidget {
   final String imagePath;
   final String title;
   final String fecha;
-  final String mensaje;
-  final Icon icono;
   final VoidCallback onTap;
 
   Widgetmediano({
@@ -16,14 +14,12 @@ class Widgetmediano extends StatelessWidget {
     required this.title,
     required this.fecha,
     required this.onTap,
-    required this.mensaje,
-    required this.icono,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.all(8.0),
       child: Container(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,19 +27,19 @@ class Widgetmediano extends StatelessWidget {
             Stack(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(13),
+                  borderRadius: BorderRadius.circular(10),
                   child: Image.network(
                     imagePath,
-                    height: 140,
-                    width: 250,
+                    height: 120,
+                    width: 200,
                     fit: BoxFit.fill,
                   ),
                 ),
                 Container(
-                  height: 140,
-                  width: 250,
+                  height: 120,
+                  width: 200,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(13),
+                      borderRadius: BorderRadius.circular(10),
                       gradient: LinearGradient(
                         begin: Alignment.bottomLeft,
                         end: Alignment.bottomRight,
@@ -51,72 +47,74 @@ class Widgetmediano extends StatelessWidget {
                       )),
                 ),
                 Positioned(
-                  top: 15,
-                  left: 200,
+                  top: 10,
+                  left: 140,
                   child: Container(
-                    padding: EdgeInsets.only(
-                        left: 10,
-                        right: 10,
-                        top: 5.5,
-                        bottom: 2), // Add some padding if you want
+                    padding: EdgeInsets.all(5),
                     decoration: BoxDecoration(
-                      color: Colors.white, // Change this to your desired color
+                      color: Colors.white,
                       shape: BoxShape.circle,
                     ),
                     child: Icon(
                       CupertinoIcons.heart,
                       color: Colors.black,
-                      size: 22,
+                      size: 18,
                     ),
                   ),
                 ),
                 Positioned(
-                  top: 55,
-                  left: 17,
+                  top: 45,
+                  left: 10,
                   child: Text(
                     title,
                     style: GoogleFonts.roboto(
                       color: Colors.white,
-                      fontSize: 18.5,
+                      fontSize: 16,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
                 Positioned(
-                  top: 83,
-                  left: 17,
+                  top: 70,
+                  left: 10,
                   child: Text(
                     fecha,
                     style: GoogleFonts.roboto(
                       color: const Color.fromARGB(255, 246, 246, 246),
-                      fontSize: 18,
+                      fontSize: 14,
                       fontWeight: FontWeight.w300,
                     ),
                   ),
                 ),
               ],
             ),
-            SB8,
+            SizedBox(height: 8),
             Container(
-              width: 250,
+              width: 200,
               child: ElevatedButton(
                 onPressed: onTap,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      mensaje,
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      'Buscar boletos',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w600),
                     ),
-                    //icono
-                    icono,
-                    const SizedBox(width: 6),
+                    SizedBox(width: 9),
+                    Icon(
+                      CupertinoIcons.tickets,
+                      size: 18,
+                      color: Colors.white,
+                    ),
                   ],
                 ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: azulOscuro,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                 ),
               ),
