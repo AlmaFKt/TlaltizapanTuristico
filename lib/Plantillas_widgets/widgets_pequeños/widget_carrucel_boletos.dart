@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../Componentes/variables.dart';
+import '../../Componentes/variables.dart';
 
 class Widgetmediano extends StatelessWidget {
   final String imagePath;

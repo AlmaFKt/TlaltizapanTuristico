@@ -3,14 +3,14 @@ import 'package:tlaltizapan_turistico/Plantillas_widgets/widgets_peque%C3%B1os/w
 import 'package:tlaltizapan_turistico/Plantillas_widgets/widgets_grandes/widget_opiniones_hoteles.dart';
 import '../Componentes/variables.dart';
 
-class HotelesPagina extends StatefulWidget {
-  const HotelesPagina({super.key});
+class ArtesanosPagina extends StatefulWidget {
+  const ArtesanosPagina({super.key});
 
   @override
-  State<HotelesPagina> createState() => _HotelesPaginaState();
+  State<ArtesanosPagina> createState() => _ArtesanosPaginaState();
 }
 
-class _HotelesPaginaState extends State<HotelesPagina> {
+class _ArtesanosPaginaState extends State<ArtesanosPagina> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,10 +27,10 @@ class _HotelesPaginaState extends State<HotelesPagina> {
                   children: [
                     WidgetOpiniones(
                       imagePath:
-                          'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/e9/4e/c4/las-estacas-parque-natural.jpg',
-                      title: ("La selección del día"),
+                          'https://www.24morelos.com/content/images/size/w1304/wp-content/uploads/2019/04/artesanias.jpg',
+                      title: ("Artesano destacado"),
                       description: ("Basado en las opiniones de los usuarios"),
-                      nombre: ("Hotel Santa Isabel"),
+                      nombre: ("Artesanias Eclipse"),
                       ubicacion: ("Tlaltizapán, Morelos"),
                       opiniones: ("4.4(32 opiniones)"),
                       onTap: () {},
@@ -44,12 +44,11 @@ class _HotelesPaginaState extends State<HotelesPagina> {
                               left: MediaQuery.of(context).size.width < 350
                                   ? 10
                                   : 15),
-                          child: Text('Hoteles en tendencia', style: H2),
+                          child: Text('Artesanos populares', style: H2),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 15),
-                          child: Text(
-                              'Selecciones basadas en las opiniones de los usaurios',
+                          child: Text('Basado en las opiniones de los usuarios',
                               style: H3),
                         ),
                         SizedBox(
@@ -62,7 +61,7 @@ class _HotelesPaginaState extends State<HotelesPagina> {
                                       : 0.5,
                             ),
                             scrollDirection: Axis.horizontal,
-                            children: listaHoteles(),
+                            children: listaArtesanos(),
                           ),
                         ),
                       ],
@@ -75,7 +74,7 @@ class _HotelesPaginaState extends State<HotelesPagina> {
                               left: MediaQuery.of(context).size.width < 350
                                   ? 10
                                   : 15),
-                          child: Text('Hoteles con 5 estrellas', style: H2),
+                          child: Text('Madera tallada', style: H2),
                         ),
                         SizedBox(
                           height: 210,
@@ -87,7 +86,7 @@ class _HotelesPaginaState extends State<HotelesPagina> {
                                       : 0.5,
                             ),
                             scrollDirection: Axis.horizontal,
-                            children: listaHoteles(),
+                            children: listaArtesanos(),
                           ),
                         ),
                       ],
@@ -100,7 +99,7 @@ class _HotelesPaginaState extends State<HotelesPagina> {
                               left: MediaQuery.of(context).size.width < 350
                                   ? 10
                                   : 15),
-                          child: Text('Hoteles con piscina', style: H2),
+                          child: Text('Trajes de chinelo', style: H2),
                         ),
                         SizedBox(
                           height: 210,
@@ -112,7 +111,32 @@ class _HotelesPaginaState extends State<HotelesPagina> {
                                       : 0.5,
                             ),
                             scrollDirection: Axis.horizontal,
-                            children: listaHoteles(),
+                            children: listaArtesanos(),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: MediaQuery.of(context).size.width < 350
+                                  ? 10
+                                  : 15),
+                          child: Text('Talabartería', style: H2),
+                        ),
+                        SizedBox(
+                          height: 210,
+                          child: PageView(
+                            controller: PageController(
+                              viewportFraction:
+                                  MediaQuery.of(context).size.width < 350
+                                      ? 0.8
+                                      : 0.5,
+                            ),
+                            scrollDirection: Axis.horizontal,
+                            children: listaArtesanos(),
                           ),
                         ),
                       ],
@@ -127,12 +151,12 @@ class _HotelesPaginaState extends State<HotelesPagina> {
     );
   }
 
-  List<Widget> listaHoteles() {
-    return List.generate(5, (x){
-     return WidgetMInfo(
+  List<Widget> listaArtesanos() {
+    return List.generate(5, (x) {
+      return WidgetMInfo(
           imagePath:
-              ('https://x.cdrst.com/foto/hotel-sf/366aa/granderesp/hotel-piedras-de-sol-solaris-morelos-servicios-127bf8cd.jpg'),
-          title: ('Hotel solaris'),
+              ('https://tlaltizapandezapata.gob.mx/media/fotos/noticia/789-126813806_4049756128410409_7421297113215788760_n.jpg'),
+          title: ('Mamai artesanias'),
           ubicacion: ('Tlaltizapán, Centro'),
           onTap: () {});
     });

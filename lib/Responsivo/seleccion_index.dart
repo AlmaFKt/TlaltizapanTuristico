@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/widgets.dart';
 import 'package:tlaltizapan_turistico/Componentes/variables.dart';
 import 'package:tlaltizapan_turistico/PaginasPrincipales/descubre_cuerpo.dart';
 import 'package:tlaltizapan_turistico/PaginasPrincipales/hoteles_cuerpo.dart';
-import 'package:tlaltizapan_turistico/Plantillas_widgets/plantilla_eventos.dart';
-
+import 'package:tlaltizapan_turistico/Plantillas_widgets/pantallas/plantilla_eventos.dart';
+import '../Componentes/barra_Busqueda.dart';
+import '../PaginasPrincipales/artesanos_cuerpo.dart';
 import '../PaginasPrincipales/restaurantes_cuerpo.dart';
 
 class SeleccionIndex extends StatefulWidget {
@@ -27,7 +29,7 @@ class _SeleccionIndexState extends State<SeleccionIndex> {
   int selectedIndex = 0;
 
   final List<Widget> _widgetOptions = [
-    PlantillaEventos(),
+    //PlantillaEventos(),
     //age2Widget(),
     // Add more widgets/pages here as needed
   ];
@@ -46,8 +48,8 @@ class _SeleccionIndexState extends State<SeleccionIndex> {
         return HotelesPagina();
       case 2:
         return RestaurantesPagina();
-      //case 3:
-      // return ArtesanosPage();
+      case 3:
+        return ArtesanosPagina();
       default:
         return CuerpoBase();
     }
@@ -57,7 +59,15 @@ class _SeleccionIndexState extends State<SeleccionIndex> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar,
-      body: getPageWidget(selectedIndex),
+      body: Column(
+        children: [
+          SB8,
+          BarraBusqueda(),
+          Flexible(
+            child: getPageWidget(selectedIndex),
+          ),
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(

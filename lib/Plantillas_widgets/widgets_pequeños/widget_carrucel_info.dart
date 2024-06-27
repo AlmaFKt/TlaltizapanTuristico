@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../Componentes/variables.dart';
+import '../../Componentes/variables.dart';
 
 class WidgetMInfo extends StatelessWidget {
   final String imagePath;
@@ -68,6 +68,7 @@ class WidgetMInfo extends StatelessWidget {
                     left: 10,
                     child: Text(
                       title,
+                      overflow: TextOverflow.ellipsis,
                       style: GoogleFonts.roboto(
                         color: Colors.white,
                         fontSize: 16,

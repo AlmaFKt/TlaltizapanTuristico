@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:tlaltizapan_turistico/Plantillas_widgets/widget_carrucel_info.dart';
+import 'package:tlaltizapan_turistico/Plantillas_widgets/widgets_peque%C3%B1os/widget_carrucel_info.dart';
 import '../Componentes/variables.dart';
-import '../Plantillas_widgets/widget_opiniones_restaurantes.dart';
+import '../Plantillas_widgets/widgets_grandes/widget_opiniones_restaurantes.dart';
 
 class RestaurantesPagina extends StatefulWidget {
   const RestaurantesPagina({super.key});
@@ -17,8 +17,6 @@ class _RestaurantesPaginaState extends State<RestaurantesPagina> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SB8,
-          BarraBusqueda,
           SB16,
           Expanded(
             child: Scrollbar(
@@ -46,7 +44,7 @@ class _RestaurantesPaginaState extends State<RestaurantesPagina> {
                               left: MediaQuery.of(context).size.width < 350
                                   ? 10
                                   : 15),
-                          child: Text('Hoteles en tendencia', style: H2),
+                          child: Text('Restaurantes en tendencia', style: H2),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(left: 15),
@@ -77,7 +75,7 @@ class _RestaurantesPaginaState extends State<RestaurantesPagina> {
                               left: MediaQuery.of(context).size.width < 350
                                   ? 10
                                   : 15),
-                          child: Text('Hoteles con 5 estrellas', style: H2),
+                          child: Text('Taquerias', style: H2),
                         ),
                         SizedBox(
                           height: 210,
@@ -90,32 +88,6 @@ class _RestaurantesPaginaState extends State<RestaurantesPagina> {
                             ),
                             scrollDirection: Axis.horizontal,
                             children: listaRestaurantes(),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(
-                              left: MediaQuery.of(context).size.width < 350
-                                  ? 10
-                                  : 15),
-                          child: Text('Hoteles con piscina', style: H2),
-                        ),
-                        SizedBox(
-                          height: 210,
-                          child: PageView(
-                            controller: PageController(
-                              viewportFraction:
-                                  MediaQuery.of(context).size.width < 350
-                                      ? 0.8
-                                      : 0.5,
-                            ),
-                            scrollDirection: Axis.horizontal,
-                            children: 
-                              listaRestaurantes() 
                           ),
                         ),
                       ],
@@ -135,7 +107,7 @@ class _RestaurantesPaginaState extends State<RestaurantesPagina> {
       return WidgetMInfo(
           imagePath:
               ('https://img.carta.menu/storage/media/company_gallery/39212499/conversions/contribution_gallery.jpg'),
-          title: ('Hotel solaris'),
+          title: ('La arboledaaaaaaaaaaaaaaaaaa'),
           ubicacion: ('Tlaltizapán, Centro'),
           onTap: () {});
     });

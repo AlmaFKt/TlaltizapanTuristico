@@ -2,8 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:tlaltizapan_turistico/Plantillas_widgets/plantilla_eventos.dart';
-import 'package:tlaltizapan_turistico/Plantillas_widgets/widget_principal_descubre.dart';
+import 'package:tlaltizapan_turistico/Plantillas_widgets/pantallas/plantilla_eventos.dart';
+import 'package:tlaltizapan_turistico/Plantillas_widgets/widgets_grandes/widget_principal_descubre.dart';
 import '../Componentes/variables.dart';
 
 class CuerpoBase extends StatefulWidget {
@@ -25,8 +25,6 @@ class _CuerpoBaseState extends State<CuerpoBase> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SB8,
-          BarraBusqueda,
           SB16,
           Expanded(
             child: Scrollbar(

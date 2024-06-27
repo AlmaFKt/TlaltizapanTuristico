@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../Componentes/variables.dart';
+import '../../Componentes/variables.dart';
 
-class WidgetOpiniones extends StatelessWidget {
+class WidgetOpinionesR extends StatelessWidget {
   final String imagePath;
   final String title;
   final String description;
@@ -12,7 +12,7 @@ class WidgetOpiniones extends StatelessWidget {
   final String opiniones;
   final VoidCallback onTap;
 
-  WidgetOpiniones({
+  WidgetOpinionesR({
     required this.imagePath,
     required this.title,
     required this.description,
@@ -85,43 +85,43 @@ class WidgetOpiniones extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 55,
+                top: 80,
                 left: 17,
                 child: Text(
                   nombre,
                   style: GoogleFonts.roboto(
                     color: Colors.white,
-                    fontSize: 18.5,
+                    fontSize: 17.5,
                     fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-              Positioned(
-                top: 83,
-                left: 17,
-                child: Text(
-                  ubicacion,
-                  style: GoogleFonts.roboto(
-                    color: const Color.fromARGB(255, 246, 246, 246),
-                    fontSize: 18,
-                    fontWeight: FontWeight.w300,
                   ),
                 ),
               ),
               Positioned(
                 top: 106,
                 left: 17,
+                child: Text(
+                  ubicacion,
+                  style: GoogleFonts.roboto(
+                    color: const Color.fromARGB(255, 246, 246, 246),
+                    fontSize: 17,
+                    fontWeight: FontWeight.w300,
+                  ),
+                ),
+              ),
+              Positioned(
+                top: 106,
+                left: 240,
                 child: Row(
                   children: [
                     Icon(Icons.star_rate_rounded,
-                        color: Colors.white, size: 26),
-                    const SizedBox(width: 6),
+                        color: Colors.white, size: 24),
+                    const SizedBox(width: 2),
                     Text(
                       opiniones,
                       style: TextStyle(
                         color: Colors.white,
-                        fontSize: 19,
-                        fontWeight: FontWeight.w300,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w200,
                       ),
                     ),
                   ],

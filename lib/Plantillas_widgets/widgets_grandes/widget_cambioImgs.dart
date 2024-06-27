@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../Componentes/variables.dart';
+import '../../Componentes/variables.dart';
 
 class WidgetImagenes extends StatefulWidget {
   final List<String> imagenes;
