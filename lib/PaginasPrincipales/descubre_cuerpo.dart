@@ -7,40 +7,26 @@ import 'package:tlaltizapan_turistico/Plantillas_widgets/widget_principal_descub
 import '../Componentes/variables.dart';
 
 class CuerpoBase extends StatefulWidget {
-  final Widget child;
-  final int selectedIndex;
-  final void Function(int) onItemTapped;
-
   const CuerpoBase({
     Key? key,
-    required this.child,
-    required this.selectedIndex,
-    required this.onItemTapped,
   }) : super(key: key);
+
 
   @override
   State<CuerpoBase> createState() => _CuerpoBaseState();
 }
 
 class _CuerpoBaseState extends State<CuerpoBase> {
-  int selectedIndex = 0;
-
-  void onItemTapped(int index) {
-    setState(() {
-      selectedIndex = index;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar,
       backgroundColor: ColorFondo,
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SB8,
-         BarraBusqueda,
+          BarraBusqueda,
           SB16,
           Expanded(
             child: Scrollbar(
@@ -91,30 +77,6 @@ class _CuerpoBaseState extends State<CuerpoBase> {
             ),
           ),
         ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.public),
-            label: 'Descubre',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.bed_double),
-            label: 'Hoteles',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.restaurant),
-            label: 'Restaurantes',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.square), //no encontre un icono representativo
-            label: 'Artesanos',
-          ),
-        ],
-        currentIndex: selectedIndex,
-        unselectedItemColor: gris,
-        selectedItemColor: azulOscuro,
-        onTap: onItemTapped,
       ),
     );
   }

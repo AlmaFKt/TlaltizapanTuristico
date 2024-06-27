@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:tlaltizapan_turistico/Plantillas_widgets/widget_carrucel_info.dart';
-import 'package:tlaltizapan_turistico/Plantillas_widgets/widget_opiniones_hoteles.dart';
 import '../Componentes/variables.dart';
+import '../Plantillas_widgets/widget_opiniones_restaurantes.dart';
 
-class HotelesPagina extends StatefulWidget {
-  const HotelesPagina({super.key});
+class RestaurantesPagina extends StatefulWidget {
+  const RestaurantesPagina({super.key});
 
   @override
-  State<HotelesPagina> createState() => _HotelesPaginaState();
+  State<RestaurantesPagina> createState() => _RestaurantesPaginaState();
 }
 
-class _HotelesPaginaState extends State<HotelesPagina> {
+class _RestaurantesPaginaState extends State<RestaurantesPagina> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,14 +27,14 @@ class _HotelesPaginaState extends State<HotelesPagina> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    WidgetOpiniones(
+                    WidgetOpinionesR(
                       imagePath:
                           'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/e9/4e/c4/las-estacas-parque-natural.jpg',
                       title: ("La selección del día"),
                       description: ("Basado en las opiniones de los usuarios"),
-                      nombre: ("Hotel Santa Isabel"),
-                      ubicacion: ("Tlaltizapán, Morelos"),
-                      opiniones: ("4.4(32 opiniones)"),
+                      nombre: ("Restaurant Santa Isabel"),
+                      ubicacion: ("Cocina mediterránea"),
+                      opiniones: ("4.4 (32)"),
                       onTap: () {},
                     ),
                     SB16,
@@ -64,7 +64,7 @@ class _HotelesPaginaState extends State<HotelesPagina> {
                                       : 0.5,
                             ),
                             scrollDirection: Axis.horizontal,
-                            children: listaHoteles(),
+                            children: listaRestaurantes(),
                           ),
                         ),
                       ],
@@ -89,7 +89,7 @@ class _HotelesPaginaState extends State<HotelesPagina> {
                                       : 0.5,
                             ),
                             scrollDirection: Axis.horizontal,
-                            children: listaHoteles(),
+                            children: listaRestaurantes(),
                           ),
                         ),
                       ],
@@ -114,7 +114,8 @@ class _HotelesPaginaState extends State<HotelesPagina> {
                                       : 0.5,
                             ),
                             scrollDirection: Axis.horizontal,
-                            children: listaHoteles(),
+                            children: 
+                              listaRestaurantes() 
                           ),
                         ),
                       ],
@@ -129,9 +130,9 @@ class _HotelesPaginaState extends State<HotelesPagina> {
     );
   }
 
-  List<Widget> listaHoteles() {
-    return List.generate(5, (x){
-     return WidgetMInfo(
+  List<Widget> listaRestaurantes() {
+    return List.generate(5, (x) {
+      return WidgetMInfo(
           imagePath:
               ('https://img.carta.menu/storage/media/company_gallery/39212499/conversions/contribution_gallery.jpg'),
           title: ('Hotel solaris'),

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:tlaltizapan_turistico/Componentes/incons.dart';
 import 'package:tlaltizapan_turistico/Componentes/variables.dart';
-import 'package:tlaltizapan_turistico/Plantillas_widgets/widget_carrucel.dart';
-import 'package:tlaltizapan_turistico/PaginasPrincipales/descubre_cuerpo.dart';
+import 'package:tlaltizapan_turistico/Plantillas_widgets/widget_carrucel_boletos.dart';
 import 'package:get/get.dart';
+import '../Responsivo/layout_responsivo.dart';
+import '../Responsivo/movil_body.dart';
+import '../Responsivo/tablet_body.dart';
 import 'widget_cambioImgs.dart';
 
 class PlantillaEventos extends StatefulWidget {
@@ -28,12 +30,10 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                 GestureDetector(
                   onTap: () {
                     Get.to(
-                        () => CuerpoBase(
-                              selectedIndex: 0,
-                              onItemTapped: (int index) {},
-                              child: Container(),
-                            ),
-                        arguments: {'index': 0});
+                       Get.to(() => ResponsiveLayout(
+                                    MobileBody: MovilBody(),
+                                    TabletBody: TabletBody(),
+                                  )));
                   },
                   child: Row(
                     children: [
@@ -80,7 +80,10 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                           onTap: () {}),
                       SB16,
                       Padding(
-                        padding: const EdgeInsets.only(left: 15),
+                        padding: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width < 350
+                                ? 10
+                                : 15),
                         child: Text('Eventos recomendados', style: H2),
                       ),
                       Padding(
@@ -90,7 +93,12 @@ class _PlantillaEventosState extends State<PlantillaEventos> {
                       SizedBox(
                         height: 210,
                         child: PageView(
-                          controller: PageController(viewportFraction: 0.5),
+                          controller: PageController(
+                            viewportFraction:
+                                MediaQuery.of(context).size.width < 350
+                                    ? 0.8
+                                    : 0.5,
+                          ),
                           scrollDirection: Axis.horizontal,
                           children: [
                             Widgetmediano(

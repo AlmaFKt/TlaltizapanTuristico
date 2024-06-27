@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../PaginasPrincipales/descubre_cuerpo.dart';
+import '../Responsivo/seleccion_index.dart';
 
 class MovilBody extends StatefulWidget {
   const MovilBody({super.key});
@@ -12,7 +12,7 @@ class _MovilBodyState extends State<MovilBody> {
   int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return CuerpoBase(
+    return SeleccionIndex(
       child: Column(
         children: [
           

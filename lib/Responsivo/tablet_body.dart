@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../PaginasPrincipales/descubre_cuerpo.dart';
+import 'package:tlaltizapan_turistico/Responsivo/seleccion_index.dart';
+
 
 class TabletBody extends StatefulWidget {
   const TabletBody({super.key});
@@ -13,7 +14,7 @@ class _TabletBodyState extends State<TabletBody> {
 
   @override
   Widget build(BuildContext context) {
-    return CuerpoBase(
+    return SeleccionIndex(
       child: Column(
         children: [
           // Add specific content for tablet layout

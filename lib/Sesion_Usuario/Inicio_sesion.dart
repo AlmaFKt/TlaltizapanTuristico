@@ -19,7 +19,6 @@ class InicioSesion extends StatefulWidget {
 }
 
 class _InicioSesionState extends State<InicioSesion> {
-  //Controladores para los campos de texto
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
